@@ -13,7 +13,6 @@ export interface MapOptions {
   lon: number;
   zoom: number;
 }
-declare var AMap;
 @Component({
   selector: 'page-home',
   templateUrl: './home.html'
