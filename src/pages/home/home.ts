@@ -6,6 +6,7 @@ import { MapConst } from './map.const';
 
 import { AppConfig } from './../../app/app.config';
 import { POINTS } from './../../app/points';
+import { LoginPage } from './../login/login';
 
 export interface MapOptions {
   mapStyle: string;
@@ -13,6 +14,7 @@ export interface MapOptions {
   lon: number;
   zoom: number;
 }
+declare var AMap;
 @Component({
   selector: 'page-home',
   templateUrl: './home.html'
@@ -459,7 +461,9 @@ export class HomePage {
       }
     }
   }
-
+  login(){
+    this.navCtrl.push(LoginPage);
+  }
 }
 
 
