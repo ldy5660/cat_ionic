@@ -38,13 +38,53 @@ page-home {
   .iconType:active{
     background-color: gray;
   }
+  .search{
+    right:0px;
+    position: absolute;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    margin: 15px;
+  }
+  .search:active{
+    background-color: gray;
+  }
+  .compass{
+    bottom:50px;
+    position: absolute;
+    background-color: white;
+    width: 35px;
+    height: 35px;
+    margin: 15px;
+  }
+  .compass:active{
+    background-color: gray;
+  }
+  .imgcompass{
+    border: 0px;
+    margin: 0px;
+    top:0px;
+    width: 100%;
+    position: absolute;  
+  }
+  .imgsearch{
+    width: 20px;
+  }
   .img{
     border: 0px;
     margin: 0px;
     top:-2px;
     width: 95%;
-    position: absolute;
-    
+    position: absolute;  
+  }
+  .img_list{
+    width: 50%;
+  }
+  .function_list{
+    bottom: 100px;
+  }
+  .function_list2{
+    bottom: 40px;
   }
 }
 

@@ -9,19 +9,50 @@
       <div>−</div>
     </div> -->
   </div>
-  <ion-fab right edge>
-    <button ion-fab color="vibrant" mini><ion-icon name="add"></ion-icon></button>
-    <ion-fab-list>
+  
+
+  <!-- user button -->
+  <button ion-fab color="vibrant" class="iconType" (click)="login()">
+      <img src="../../assets/imgs/user_login_orange.png" alt="" class="img">
+  </button>
+  <button ion-fab color="vibrant" class="search" (click)="login()">
+      <img src="../../assets/imgs/search.png" alt="" class="imgsearch">
+  </button>
+  <button ion-fab color="vibrant" class="compass" (click)="login()">
+      <img src="../../assets/imgs/compass.png" alt="" class="imgcompass">
+  </button>
+  <ion-pullup (onExpand)="footerExpanded()" (onCollapse)="footerCollapsed()" [(state)]="footerState">
+      <ion-pullup-tab [footer]="pullup" (tap)="toggleFooter()">
+        <ion-icon name="arrow-up" *ngIf="footerState == 0"></ion-icon><ion-icon name="arrow-down" *ngIf="footerState == 1"></ion-icon>
+      </ion-pullup-tab>
+      <ion-toolbar color="primary" (tap)="toggleFooter()">
+        <ion-title>Footer</ion-title>
+      </ion-toolbar>
+      <ion-content>
+      ... FOOTER CONTENT ...
+      </ion-content>
+    </ion-pullup>
+  
+  <ion-fab right class="function_list">
+      <button ion-fab color="light"><img src="../../assets/imgs/list.png" alt="" class="img_list"></button>
+      <ion-fab-list side="left">
+        <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+        <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+        <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+        <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+      </ion-fab-list>
+    </ion-fab>
+  
+  <ion-fab right bottom class="function_list2">
+    <button ion-fab color="light"><ion-icon name="arrow-dropleft"></ion-icon></button>
+    <ion-fab-list side="left">
       <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
       <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
       <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
       <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
     </ion-fab-list>
   </ion-fab>
-  <!-- user button -->
-  <button ion-fab top color="vibrant" class="iconType" (click)="login()">
-      <img src="../../assets/imgs/user_login.png" alt="" class="img">
-  </button>
+
   <!-- map -->
   <div #map_container class="map_container">
   

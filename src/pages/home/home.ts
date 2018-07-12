@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, AlertController, Platform, LoadingController, Loading } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
+import { IonPullUpFooterState } from 'ionic-pullup';
 
 import { MapConst } from './map.const';
 
@@ -26,13 +27,23 @@ export class HomePage {
   public map = null;
   public element: Element = null;
   public Amap ;
+  footerState: IonPullUpFooterState;
   constructor(public navCtrl: NavController,
+    
     protected alertCtrl: AlertController,
     private platform: Platform,
     private loadingCtrl: LoadingController) {
-
+      this.footerState = IonPullUpFooterState.Collapsed;
   }
-
+  footerExpanded() {
+    console.log('Footer expanded!');
+  }
+  footerCollapsed() {
+    console.log('Footer collapsed!');
+  }
+  toggleFooter() {
+    this.footerState = this.footerState == IonPullUpFooterState.Collapsed ? IonPullUpFooterState.Expanded : IonPullUpFooterState.Collapsed;
+  }
   /***
    * 创建地图
    * @returns {Promise}
