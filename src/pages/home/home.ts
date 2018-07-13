@@ -8,6 +8,7 @@ import { MapConst } from './map.const';
 import { AppConfig } from './../../app/app.config';
 import { POINTS } from './../../app/points';
 import { LoginPage } from './../login/login';
+import $ from 'jquery';
 
 export interface MapOptions {
   mapStyle: string;
@@ -27,6 +28,7 @@ export class HomePage {
   public map = null;
   public element: Element = null;
   public Amap ;
+  public barstatu=0;
   footerState: IonPullUpFooterState;
   constructor(public navCtrl: NavController,
     
@@ -475,6 +477,17 @@ export class HomePage {
   login(){
     this.navCtrl.push(LoginPage);
   }
+  pointup(){
+    console.log($("#up").parent().parent().css("transform","translate3d(0px, 180px, 0px)"));
+  }
+  showsearchbar(){
+
+    if(this.barstatu==0){$(".searchbar").css("visibility","visible");this.barstatu=1;}
+    else if(this.barstatu==1){$(".searchbar").css("visibility","hidden");this.barstatu=0;}
+  }
+  // searchup(){
+  //    console.log($("#up2").parent().parent().css("transform","translate3d(0px, 60px, 0px)"));
+  //  }
 }
 
 

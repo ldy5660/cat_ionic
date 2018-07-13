@@ -13,13 +13,14 @@
 
   <!-- user button -->
   <button ion-fab color="vibrant" class="iconType" (click)="login()">
-      <img src="../../assets/imgs/user_login_orange.png" alt="" class="img">
+    <img src="../../assets/imgs/user_login_orange.png" alt="" class="img">
   </button>
-  <button ion-fab color="vibrant" class="search" (click)="login()">
-      <img src="../../assets/imgs/search.png" alt="" class="imgsearch">
+  <ion-searchbar class="searchbar" (ionInput)="getItems($event)"></ion-searchbar>
+  <button ion-fab color="vibrant" class="search" (click)="showsearchbar()" (tap)="toggleFooter();pointup();">
+    <img src="../../assets/imgs/search.png" alt="" class="imgsearch">
   </button>
   <button ion-fab color="vibrant" class="compass" (click)="login()">
-      <img src="../../assets/imgs/compass.png" alt="" class="imgcompass">
+    <img src="../../assets/imgs/compass.png" alt="" class="imgcompass">
   </button>
   <button ion-fab color="light" class="function_list">
     <img src="../../assets/imgs/list.png" alt="" class="img_list">
@@ -32,71 +33,53 @@
   </div>
 
 </ion-content>
-<ion-pullup #pullup (onExpand)="footerExpanded()" (onCollapse)="footerCollapsed()" [(state)]="footerState">
-  <ion-pullup-tab (tap)="toggleFooter()">
-    <ion-icon name="arrow-up" *ngIf="footerState == 0"></ion-icon>
+<ion-pullup #pullup (onExpand)="pointup()" (onCollapse)="footerCollapsed()" [(state)]="footerState">
+  <ion-pullup-tab>
+    <ion-icon name="arrow-up" *ngIf="footerState == 0" id="up"></ion-icon>
     <ion-icon name="arrow-down" *ngIf="footerState == 1"></ion-icon>
   </ion-pullup-tab>
 
   <ion-content>
-    <ion-card>
-      <ion-card-header>
-        Header
-      </ion-card-header>
-      <ion-card-content>
-        The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <ion-card-header>
-        Explore Nearby
-      </ion-card-header>
+      <ion-card>
 
-      <ion-list>
-        <button ion-item>
-          <ion-icon name="cart" item-left></ion-icon>
-          Shopping
-        </button>
-
-        <button ion-item>
-          <ion-icon name="medical" item-left></ion-icon>
-          Hospital
-        </button>
-
-        <button ion-item>
-          <ion-icon name="cafe" item-left></ion-icon>
-          Cafe
-        </button>
-
-        <button ion-item>
-          <ion-icon name="paw" item-left></ion-icon>
-          Dog Park
-        </button>
-
-        <button ion-item>
-          <ion-icon name="beer" item-left></ion-icon>
-          Pub
-        </button>
-
-        <button ion-item>
-          <ion-icon name="planet" item-left></ion-icon>
-          Space
-        </button>
-
-      </ion-list>
-    </ion-card>
-    <ion-list inset>
-
-      <ion-item>
-        <ion-label>Username</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Password</ion-label>
-        <ion-input type="password"></ion-input>
-      </ion-item>
-
-    </ion-list>
+          <img src="../../assets/imgs/dog.jpg">
+          <ion-fab right top>
+            <button ion-fab>
+              <ion-icon name="pin"></ion-icon>
+            </button>
+          </ion-fab>
+        
+          <ion-item>
+            <ion-icon name="football" item-start large></ion-icon>
+            <h2>Museum of Football</h2>
+            <p>11 N. Way St, Madison, WI 53703</p>
+          </ion-item>
+        
+          <ion-item>
+            <ion-icon name="wine" item-start large ></ion-icon>
+            <h2>Institute of Fine Cocktails</h2>
+            <p>14 S. Hop Avenue, Madison, WI 53703</p>
+          </ion-item>
+        
+          <ion-item>
+            <span item-start>18 min</span>
+            <span item-start>(2.6 mi)</span>
+            <button ion-button icon-start clear item-end>
+              <ion-icon name="navigate"></ion-icon>
+              Start
+            </button>
+          </ion-item>
+        
+      </ion-card>
   </ion-content>
 </ion-pullup>
+<!-- <ion-pullup #pullup2 (onExpand)="searchup()" (onCollapse)="footerCollapsed()" [(state)]="footerState">
+    <ion-pullup-tab>
+      <ion-icon name="arrow-up" *ngIf="footerState == 0" id="up2"></ion-icon>
+      <ion-icon name="arrow-down" *ngIf="footerState == 1"></ion-icon>
+    </ion-pullup-tab>
+  
+    <ion-content>
+        
+    </ion-content>
+  </ion-pullup> -->
